@@ -12,12 +12,15 @@ options.add_argument('--headless')
 options.add_argument('--disable-gpu')
 chromedriver = "/usr/bin/chromedriver"
 
-user_link = "https://www.messenger.com/t/100079285037181"
+facebook_user_link = "https://www.messenger.com/t/100079285037181"
 
 facebook_bot_username = 'lorcaphan@gmail.com'
 facebook_bot_password = 'Longphan0612'
 
-def messenger():
+telegram_chat_id1 = '1921540131'
+telegram_chat_id2 = '5335298143'
+
+def messenger(user_link):
     
     driver = webdriver.Chrome(chromedriver, 
                               chrome_options=options)
@@ -56,12 +59,15 @@ def messenger():
     
     time.sleep(2)
     
-def telegram():
+def telegram(chat_id):
     
-    # telegram_bot.sendMessage(chat_id="1921540131",
+    # Me: 1921540131
+    # Mom: 5335298143
+    
+    # telegram_bot.sendMessage(chat_id=chat_id,
 #                 text="[ALERT] Detected someone in the frame!")
 
-    telegram_bot.sendPhoto(chat_id="1921540131",
+    telegram_bot.sendPhoto(chat_id=chat_id,
                 photo=open("image.png", "rb"))
 
 

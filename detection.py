@@ -1,10 +1,17 @@
 import cv2
 import mediapipe as mp
 import message
+import threading
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_pose = mp.solutions.pose
+
+telegram_t1 = threading.Thread(target=message.telegram,
+                               args = (message.telegram_chat_id1, ))
+
+telegram_t2 = threading.Thread(target=message.telegram,
+                               args = (message.telegram_chat_id2, ))
 
 while True:
   cap = cv2.VideoCapture(1)
@@ -54,7 +61,10 @@ while True:
         cap.release()
         
         try:
-          message.telegram()
+          telegram_t1.start()
+          telegram_t2.start()
+          telegram_t1.join()
+          telegram_t2.join()
         except Exception:
           message.messenger()
         else:
