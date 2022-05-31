@@ -14,7 +14,7 @@ telegram_t2 = threading.Thread(target=message.telegram,
                                args = (message.telegram_chat_id2, ))
 
 while True:
-  cap = cv2.VideoCapture(1)
+  cap = cv2.VideoCapture(0)
   with mp_pose.Pose(
       min_detection_confidence=0.8,
       min_tracking_confidence=0.8) as pose:
@@ -58,15 +58,16 @@ while True:
                       thickness= 1)
         
         cv2.imwrite('image.png', image)
-        cap.release()
+        cap. release()
         
         try:
-          telegram_t1.start()
-          telegram_t2.start()
-          telegram_t1.join()
-          telegram_t2.join()
+          # telegram_t1.start()
+          # # telegram_t2.start()
+          # telegram_t1.join()
+          # # telegram_t2.join()
+          message.telegram(chat_id=message.telegram_chat_id1)
         except Exception:
-          message.messenger()
+          message.messenger(user_link=message.facebook_user_link)
         else:
           continue
       
