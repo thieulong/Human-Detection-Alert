@@ -30,7 +30,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/thieulong/RPI-Human-Detection/human-detection"
+set -gx VIRTUAL_ENV "/home/thieulong/Human-Detection-Alert/human-detection"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

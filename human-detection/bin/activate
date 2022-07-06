@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/thieulong/RPI-Human-Detection/human-detection"
+VIRTUAL_ENV="/home/thieulong/Human-Detection-Alert/human-detection"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
