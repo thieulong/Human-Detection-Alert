@@ -5,7 +5,7 @@ import time
 import os
 import telepot
 
-telegram_bot = telepot.Bot(token="5320210497:AAFh8g9HJOxG4Om8KpqM5DZMO5f3WFQzMFQ")
+telegram_bot = telepot.Bot(token="")
 
 options = Options()
 options.add_argument('--headless')
